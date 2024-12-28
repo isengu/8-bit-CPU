@@ -67,6 +67,9 @@ def build_addresses_to_states():
 		state = states[i]
 		addresses_of_state = ["".join(tup) for tup in itertools.product(opcode_value, carry_flag_value, zero_flag_value, micro_step_value)]
 
+		if opcode_value[0] == "01101":
+			print(addresses_of_state, state)
+
 		for address in addresses_of_state:
 			rom_data[address] = hex(int(states_to_binary_word[state], 2))[2:].zfill(5)
 
