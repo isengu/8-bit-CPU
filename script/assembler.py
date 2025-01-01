@@ -30,7 +30,7 @@ def read_file(file_path):
 	with open(file_path) as f:
 		file = f.readlines()
 
-def build_label_to_address_data():
+def pre_process():
 	address_counter = 0
 
 	if file == None:
@@ -104,7 +104,7 @@ def build_ram_data():
 				ram_data[format(address_counter, '08b')] = operand[2:].zfill(2)
 				address_counter+=1
 
-def build_and_save_file_content():
+def save_file_content():
 	file_content = "v3.0 hex words plain\n"
 
 	count = 0
@@ -129,6 +129,6 @@ if __name__ == "__main__":
 	file_path = sys.argv[1]
 
 	read_file(file_path)
-	build_label_to_address_data()
+	pre_process()
 	build_ram_data()
-	build_and_save_file_content()
+	save_file_content()

@@ -1,7 +1,7 @@
 import pandas as pd
 import itertools
 
-filename = "../instructions_control_details.xlsx"
+filename = "../document/instructions_control_details.xlsx"
 sheet_names = ['Instruction Set', 'States and Corresponding Contro', 'Instruction States', 'States Detailed']
 
 sheet_data = {}
